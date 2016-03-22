@@ -160,6 +160,8 @@ public class connectFourDesign extends JPanel {
     clickMeSix.setBorder(new LineBorder(Color.black)); 
     clickMeSeven.setBorder(new LineBorder(Color.black));    
     
+    validate();
+    
   }
   
   private class playButtonListener implements ActionListener {
