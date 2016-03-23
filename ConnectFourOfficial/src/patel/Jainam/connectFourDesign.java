@@ -33,7 +33,6 @@ public class connectFourDesign extends JPanel {
   
   // Go Back Button
   private JButton goBack;    
-
   
   private JButton clickMeOne;
   private JButton clickMeTwo;
@@ -41,14 +40,12 @@ public class connectFourDesign extends JPanel {
   private JButton clickMeFour;
   private JButton clickMeFive;
   private JButton clickMeSix;
-  private JButton clickMeSeven;
-  
+  private JButton clickMeSeven;  
   
   // Grid xSize,ySize and 2D Array
   private int ysize = 7;
   private int xsize = 8;
-  private JButton[][] slots;
-  
+  private JButton[][] slots;  
   
   public static void main(String[] args) {
     
@@ -379,7 +376,9 @@ public class connectFourDesign extends JPanel {
         lblWelcome.setVisible(true);
         playButton.setVisible(true);
         helpButton.setVisible(true); 
-        quitButton.setVisible(true);        
+        quitButton.setVisible(true); 
+        onePlayer.setVisible(false);
+        twoPlayer.setVisible(false);
         goBack.setVisible(false);        
       }
     }
