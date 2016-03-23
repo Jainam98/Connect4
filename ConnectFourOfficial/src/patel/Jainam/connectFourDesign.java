@@ -27,6 +27,8 @@ public class connectFourDesign extends JPanel {
   private JButton helpButton; 
   private JButton quitButton;  
   
+  private JButton onePlayer;
+  private JButton twoPlayer;
   // Go Back Button
   private JButton goBack;    
 
@@ -37,6 +39,7 @@ public class connectFourDesign extends JPanel {
   private JButton clickMeFive;
   private JButton clickMeSix;
   private JButton clickMeSeven;
+  
   
   // Grid xSize,ySize and 2D Array
   private int ysize = 7;
@@ -71,6 +74,22 @@ public class connectFourDesign extends JPanel {
     playButton.setVisible(true);
     playButton.addActionListener(new playButtonListener());
     
+    onePlayer = new JButton (" 1 Player ");
+    onePlayer.setFont(new Font("Astron Boy Rg", Font.ITALIC, 55));
+    onePlayer.setBackground(Color.black);
+    onePlayer.setForeground(Color.GREEN);
+    add(onePlayer);
+    onePlayer.setVisible(false);
+    onePlayer.addActionListener(new onePlayerButtonListener());
+    
+    twoPlayer = new JButton (" 2 Player ");
+    twoPlayer.setFont(new Font("Astron Boy Rg", Font.ITALIC, 55));
+    twoPlayer.setBackground(Color.black);
+    twoPlayer.setForeground(Color.GREEN);
+    add(twoPlayer);
+    twoPlayer.setVisible(false);
+    twoPlayer.addActionListener(new twoPlayerButtonListener());     
+    
     helpButton = new JButton ( " Help ");
     helpButton.setFont(new Font("Astron Boy Rg", Font.ITALIC, 102));
     helpButton.setBackground(Color.black);
@@ -88,7 +107,7 @@ public class connectFourDesign extends JPanel {
     quitButton.addActionListener(new CloseListener());     
     
     goBack = new JButton ( " Go Back "); 
-    goBack.setFont(new Font("Astron Boy Rg", Font.ITALIC, 80));
+    goBack.setFont(new Font("Astron Boy Rg", Font.ITALIC, 75));
     goBack.setBackground(Color.black);
     goBack.setForeground(Color.BLUE);
     add(goBack);
@@ -164,38 +183,41 @@ public class connectFourDesign extends JPanel {
     
   }
   
-  private class playButtonListener implements ActionListener {
+  private class onePlayerButtonListener implements ActionListener {
     public void actionPerformed(ActionEvent event) {
       
-      if (event.getSource() == playButton) {
+      if (event.getSource() == onePlayer) {
         
         lblWelcome.setVisible(false);
-        playButton.setVisible(true);
+        playButton.setVisible(false);
         helpButton.setVisible(false); 
         quitButton.setVisible(false);
+        twoPlayer.setVisible(false);
+        onePlayer.setVisible(true);
+        goBack.setVisible(false);
         
         Thread thread =new Thread() {
           
           public void run() {
-            playButton.setText(" Game Starts In ");
-            playButton.setFont(new Font("Astron Boy Rg", Font.ITALIC, 60));
-            playButton.setBackground(Color.black);
-            playButton.setForeground(Color.BLUE);
+        	  onePlayer.setText(" Game Starts In ");
+        	  onePlayer.setFont(new Font("Astron Boy Rg", Font.ITALIC, 40));
+        	  onePlayer.setBackground(Color.black);
+        	  onePlayer.setForeground(Color.BLUE);
             try {
               Thread.sleep(1000);                        
             }catch (Exception e) {
             }
-            playButton.setText("3");
+            onePlayer.setText("3");
             try {
               Thread.sleep(1000);                        
             }catch (Exception e) {
             }
-            playButton.setText("2");
+            onePlayer.setText("2");
             try {
               Thread.sleep(1000);                        
             }catch (Exception e) {
             }
-            playButton.setText("1");  
+            onePlayer.setText("1");  
             try {
               Thread.sleep(1000);                        
             }catch (Exception e) {
@@ -224,6 +246,10 @@ public class connectFourDesign extends JPanel {
             remove(quitButton);
             goBack.setVisible(false);
             remove(goBack);
+            onePlayer.setVisible(false);
+            remove(onePlayer);
+            twoPlayer.setVisible(false);
+            remove(twoPlayer);
             
             clickMeOne.setVisible(true);
             clickMeTwo.setVisible(true);
@@ -231,16 +257,115 @@ public class connectFourDesign extends JPanel {
             clickMeFour.setVisible(true);
             clickMeFive.setVisible(true);
             clickMeSix.setVisible(true);
-            clickMeSeven.setVisible(true);  
-            
-         //   goBack.setVisible(true);
-          //  add(goBack);
+            clickMeSeven.setVisible(true); 
+
           }
         };
         thread.start();        
       }
     }
   }
+
+  private class twoPlayerButtonListener implements ActionListener {
+	    public void actionPerformed(ActionEvent event) {
+	      
+	      if (event.getSource() == twoPlayer) {
+	        
+	          lblWelcome.setVisible(false);
+	          playButton.setVisible(false);
+	          helpButton.setVisible(false); 
+	          quitButton.setVisible(false);
+	          twoPlayer.setVisible(true);
+	          onePlayer.setVisible(false);
+	          goBack.setVisible(false);
+	          
+	        
+	        Thread thread =new Thread() {
+	          
+	          public void run() {
+	        	  twoPlayer.setText(" Game Starts In ");
+	        	  twoPlayer.setFont(new Font("Astron Boy Rg", Font.ITALIC, 40));
+	        	  twoPlayer.setBackground(Color.black);
+	        	  twoPlayer.setForeground(Color.BLUE);
+	            try {
+	              Thread.sleep(1000);                        
+	            }catch (Exception e) {
+	            }
+	            twoPlayer.setText("3");
+	            try {
+	              Thread.sleep(1000);                        
+	            }catch (Exception e) {
+	            }
+	            twoPlayer.setText("2");
+	            try {
+	              Thread.sleep(1000);                        
+	            }catch (Exception e) {
+	            }
+	            twoPlayer.setText("1");  
+	            try {
+	              Thread.sleep(1000);                        
+	            }catch (Exception e) {
+	            }   
+	            
+	            setLayout(new GridLayout(xsize, ysize));
+	            slots = new JButton[xsize - 1][ysize];
+	            
+	            for (int column = 0; column < ysize; column++) {
+	              for (int row = 0; row < xsize - 1; row++) {
+	                slots[row][column] = new JButton();
+	                slots[row][column].setHorizontalAlignment(SwingConstants.CENTER); 
+	                slots[row][column].setBackground(Color.GREEN);
+	                slots[row][column].setBorder(new LineBorder(Color.black));                      
+	                add(slots[row][column]);
+	              }
+	            }  
+	            
+	            lblWelcome.setVisible(false);
+	            remove(lblWelcome);
+	            playButton.setVisible(false);
+	            remove(playButton);
+	            helpButton.setVisible(false);
+	            remove(helpButton);
+	            quitButton.setVisible(false);
+	            remove(quitButton);
+	            goBack.setVisible(false);
+	            remove(goBack);
+	            onePlayer.setVisible(false);
+	            remove(onePlayer);
+	            twoPlayer.setVisible(false);
+	            remove(twoPlayer);
+	            
+	            
+	            clickMeOne.setVisible(true);
+	            clickMeTwo.setVisible(true);
+	            clickMeThree.setVisible(true);
+	            clickMeFour.setVisible(true);
+	            clickMeFive.setVisible(true);
+	            clickMeSix.setVisible(true);
+	            clickMeSeven.setVisible(true);  
+
+	          }
+	        };
+	        thread.start();        
+	      }
+	    }
+	  }
+  
+  private class playButtonListener implements ActionListener {
+	    public void actionPerformed(ActionEvent event) {      
+	      
+	      if (event.getSource() == playButton) {         
+	        
+	        lblWelcome.setVisible(true);
+	        playButton.setVisible(false);
+	        helpButton.setVisible(false); 
+	        quitButton.setVisible(false); 
+	        onePlayer.setVisible(true);
+	        twoPlayer.setVisible(true);
+	        goBack.setVisible(true);        
+	      }
+	    }
+	  }
   
   
   private class goBackButtonListener implements ActionListener {
