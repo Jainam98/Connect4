@@ -107,7 +107,7 @@ public class connectFourDesign extends JPanel {
     quitButton.addActionListener(new CloseListener());     
     
     goBack = new JButton ( " Go Back "); 
-    goBack.setFont(new Font("Astron Boy Rg", Font.ITALIC, 75));
+    goBack.setFont(new Font("Astron Boy Rg", Font.ITALIC, 60));
     goBack.setBackground(Color.black);
     goBack.setForeground(Color.BLUE);
     add(goBack);
@@ -116,49 +116,50 @@ public class connectFourDesign extends JPanel {
     
     clickMeOne = new JButton ();
     clickMeOne.setFont(new Font("Astron Boy Rg", Font.ITALIC, 20));
-    clickMeOne.setBackground(Color.lightGray);
+    clickMeOne.setBackground(Color.black);
     clickMeOne.setForeground(Color.CYAN);
     add(clickMeOne);
     clickMeOne.setVisible(false); 
+    clickMeOne.addActionListener(new clikMeOneButtonListener());
     
     clickMeTwo = new JButton ();
     clickMeTwo.setFont(new Font("Astron Boy Rg", Font.ITALIC, 20));
-    clickMeTwo.setBackground(Color.lightGray);
+    clickMeTwo.setBackground(Color.black);
     clickMeTwo.setForeground(Color.CYAN);
     add(clickMeTwo);
     clickMeTwo.setVisible(false); 
     
     clickMeThree = new JButton ();
     clickMeThree.setFont(new Font("Astron Boy Rg", Font.ITALIC, 20));
-    clickMeThree.setBackground(Color.lightGray);
+    clickMeThree.setBackground(Color.black);
     clickMeThree.setForeground(Color.CYAN);
     add(clickMeThree);
     clickMeThree.setVisible(false); 
     
     clickMeFour = new JButton ();
     clickMeFour.setFont(new Font("Astron Boy Rg", Font.ITALIC, 20));
-    clickMeFour.setBackground(Color.lightGray);
+    clickMeFour.setBackground(Color.black);
     clickMeFour.setForeground(Color.CYAN);
     add(clickMeFour);
     clickMeFour.setVisible(false); 
     
     clickMeFive = new JButton ();
     clickMeFive.setFont(new Font("Astron Boy Rg", Font.ITALIC, 20));
-    clickMeFive.setBackground(Color.lightGray);
+    clickMeFive.setBackground(Color.black);
     clickMeFive.setForeground(Color.CYAN);
     add(clickMeFive);
     clickMeFive.setVisible(false); 
     
     clickMeSix = new JButton ();
     clickMeSix.setFont(new Font("Astron Boy Rg", Font.ITALIC, 20));
-    clickMeSix.setBackground(Color.lightGray);
+    clickMeSix.setBackground(Color.black);
     clickMeSix.setForeground(Color.CYAN);
     add(clickMeSix);
     clickMeSix.setVisible(false);     
     
     clickMeSeven = new JButton ();
     clickMeSeven.setFont(new Font("Astron Boy Rg", Font.ITALIC, 20));
-    clickMeSeven.setBackground(Color.lightGray);
+    clickMeSeven.setBackground(Color.black);
     clickMeSeven.setForeground(Color.CYAN);
     add(clickMeSeven);
     clickMeSeven.setVisible(false); 
@@ -285,8 +286,8 @@ public class connectFourDesign extends JPanel {
 	          public void run() {
 	        	  twoPlayer.setText(" Game Starts In ");
 	        	  twoPlayer.setFont(new Font("Astron Boy Rg", Font.ITALIC, 40));
-	        	  twoPlayer.setBackground(Color.black);
-	        	  twoPlayer.setForeground(Color.BLUE);
+	        	  twoPlayer.setBackground(Color.LIGHT_GRAY);
+	        	  twoPlayer.setForeground(Color.white);
 	            try {
 	              Thread.sleep(1000);                        
 	            }catch (Exception e) {
@@ -407,5 +408,19 @@ public class connectFourDesign extends JPanel {
 
       }
     }
+  } 
+  
+  private class clikMeOneButtonListener implements ActionListener{
+	    public void actionPerformed(ActionEvent event) {
+	        
+	        if (event.getSource() == clickMeOne) { 
+	        	
+	        	slots[0][0].setBackground(Color.red);	  
+	        	slots[0][1].setBackground(Color.red);
+	        	slots[0][2].setBackground(Color.red);
+	        	slots[0][3].setBackground(Color.red);
+	        	JOptionPane.showMessageDialog(null, " Player One Won!", " Results ", JOptionPane.INFORMATION_MESSAGE);
+	        }
+	    }
   }
 }
