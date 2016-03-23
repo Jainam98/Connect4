@@ -27,11 +27,14 @@ public class connectFourDesign extends JPanel {
   private JButton helpButton; 
   private JButton quitButton;  
   
+  // Game Modes  
   private JButton onePlayer;
   private JButton twoPlayer;
+  
   // Go Back Button
   private JButton goBack;    
 
+  
   private JButton clickMeOne;
   private JButton clickMeTwo;
   private JButton clickMeThree;
