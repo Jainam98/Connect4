@@ -286,8 +286,8 @@ public class connectFourDesign extends JPanel {
 	          public void run() {
 	        	  twoPlayer.setText(" Game Starts In ");
 	        	  twoPlayer.setFont(new Font("Astron Boy Rg", Font.ITALIC, 40));
-	        	  twoPlayer.setBackground(Color.LIGHT_GRAY);
-	        	  twoPlayer.setForeground(Color.white);
+	        	  twoPlayer.setBackground(Color.black);
+	        	  twoPlayer.setForeground(Color.blue);
 	            try {
 	              Thread.sleep(1000);                        
 	            }catch (Exception e) {
@@ -413,12 +413,17 @@ public class connectFourDesign extends JPanel {
   private class clikMeOneButtonListener implements ActionListener{
 	    public void actionPerformed(ActionEvent event) {
 	        
-	        if (event.getSource() == clickMeOne) { 
+	        if (event.getSource() == clickMeOne || event.getSource() == clickMeTwo) { 
 	        	
 	        	slots[0][0].setBackground(Color.red);	  
 	        	slots[0][1].setBackground(Color.red);
 	        	slots[0][2].setBackground(Color.red);
 	        	slots[0][3].setBackground(Color.red);
+	        	
+	        	slots[1][0].setBackground(Color.yellow);	  
+	        	slots[1][1].setBackground(Color.yellow);
+	        	slots[1][2].setBackground(Color.yellow);	        	
+	        	
 	        	JOptionPane.showMessageDialog(null, " Player One Won!", " Results ", JOptionPane.INFORMATION_MESSAGE);
 	        }
 	    }
