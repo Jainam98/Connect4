@@ -200,10 +200,10 @@ public class connectFourDesign extends JPanel {
         Thread thread =new Thread() {
           
           public void run() {
-        	  onePlayer.setText(" Game Starts In ");
-        	  onePlayer.setFont(new Font("Astron Boy Rg", Font.ITALIC, 40));
-        	  onePlayer.setBackground(Color.black);
-        	  onePlayer.setForeground(Color.BLUE);
+           onePlayer.setText(" Game Starts In ");
+           onePlayer.setFont(new Font("Astron Boy Rg", Font.ITALIC, 40));
+           onePlayer.setBackground(Color.black);
+           onePlayer.setForeground(Color.BLUE);
             try {
               Thread.sleep(1000);                        
             }catch (Exception e) {
@@ -268,105 +268,105 @@ public class connectFourDesign extends JPanel {
   }
 
   private class twoPlayerButtonListener implements ActionListener {
-	    public void actionPerformed(ActionEvent event) {
-	      
-	      if (event.getSource() == twoPlayer) {
-	        
-	          lblWelcome.setVisible(false);
-	          playButton.setVisible(false);
-	          helpButton.setVisible(false); 
-	          quitButton.setVisible(false);
-	          twoPlayer.setVisible(true);
-	          onePlayer.setVisible(false);
-	          goBack.setVisible(false);
-	          
-	        
-	        Thread thread =new Thread() {
-	          
-	          public void run() {
-	        	  twoPlayer.setText(" Game Starts In ");
-	        	  twoPlayer.setFont(new Font("Astron Boy Rg", Font.ITALIC, 40));
-	        	  twoPlayer.setBackground(Color.black);
-	        	  twoPlayer.setForeground(Color.blue);
-	            try {
-	              Thread.sleep(1000);                        
-	            }catch (Exception e) {
-	            }
-	            twoPlayer.setText("3");
-	            try {
-	              Thread.sleep(1000);                        
-	            }catch (Exception e) {
-	            }
-	            twoPlayer.setText("2");
-	            try {
-	              Thread.sleep(1000);                        
-	            }catch (Exception e) {
-	            }
-	            twoPlayer.setText("1");  
-	            try {
-	              Thread.sleep(1000);                        
-	            }catch (Exception e) {
-	            }   
-	            
-	            setLayout(new GridLayout(xsize, ysize));
-	            slots = new JButton[xsize - 1][ysize];
-	            
-	            for (int column = 0; column < ysize; column++) {
-	              for (int row = 0; row < xsize - 1; row++) {
-	                slots[row][column] = new JButton();
-	                slots[row][column].setHorizontalAlignment(SwingConstants.CENTER); 
-	                slots[row][column].setBackground(Color.GREEN);
-	                slots[row][column].setBorder(new LineBorder(Color.black));                      
-	                add(slots[row][column]);
-	              }
-	            }  
-	            
-	            lblWelcome.setVisible(false);
-	            remove(lblWelcome);
-	            playButton.setVisible(false);
-	            remove(playButton);
-	            helpButton.setVisible(false);
-	            remove(helpButton);
-	            quitButton.setVisible(false);
-	            remove(quitButton);
-	            goBack.setVisible(false);
-	            remove(goBack);
-	            onePlayer.setVisible(false);
-	            remove(onePlayer);
-	            twoPlayer.setVisible(false);
-	            remove(twoPlayer);
-	            
-	            
-	            clickMeOne.setVisible(true);
-	            clickMeTwo.setVisible(true);
-	            clickMeThree.setVisible(true);
-	            clickMeFour.setVisible(true);
-	            clickMeFive.setVisible(true);
-	            clickMeSix.setVisible(true);
-	            clickMeSeven.setVisible(true);  
+     public void actionPerformed(ActionEvent event) {
+       
+       if (event.getSource() == twoPlayer) {
+         
+           lblWelcome.setVisible(false);
+           playButton.setVisible(false);
+           helpButton.setVisible(false); 
+           quitButton.setVisible(false);
+           twoPlayer.setVisible(true);
+           onePlayer.setVisible(false);
+           goBack.setVisible(false);
+           
+         
+         Thread thread =new Thread() {
+           
+           public void run() {
+            twoPlayer.setText(" Game Starts In ");
+            twoPlayer.setFont(new Font("Astron Boy Rg", Font.ITALIC, 40));
+            twoPlayer.setBackground(Color.black);
+            twoPlayer.setForeground(Color.blue);
+             try {
+               Thread.sleep(1000);                        
+             }catch (Exception e) {
+             }
+             twoPlayer.setText("3");
+             try {
+               Thread.sleep(1000);                        
+             }catch (Exception e) {
+             }
+             twoPlayer.setText("2");
+             try {
+               Thread.sleep(1000);                        
+             }catch (Exception e) {
+             }
+             twoPlayer.setText("1");  
+             try {
+               Thread.sleep(1000);                        
+             }catch (Exception e) {
+             }   
+             
+             setLayout(new GridLayout(xsize, ysize));
+             slots = new JButton[xsize - 1][ysize];
+             
+             for (int column = 0; column < ysize; column++) {
+               for (int row = 0; row < xsize - 1; row++) {
+                 slots[row][column] = new JButton();
+                 slots[row][column].setHorizontalAlignment(SwingConstants.CENTER); 
+                 slots[row][column].setBackground(Color.GREEN);
+                 slots[row][column].setBorder(new LineBorder(Color.black));                      
+                 add(slots[row][column]);
+               }
+             }  
+             
+             lblWelcome.setVisible(false);
+             remove(lblWelcome);
+             playButton.setVisible(false);
+             remove(playButton);
+             helpButton.setVisible(false);
+             remove(helpButton);
+             quitButton.setVisible(false);
+             remove(quitButton);
+             goBack.setVisible(false);
+             remove(goBack);
+             onePlayer.setVisible(false);
+             remove(onePlayer);
+             twoPlayer.setVisible(false);
+             remove(twoPlayer);
+             
+             
+             clickMeOne.setVisible(true);
+             clickMeTwo.setVisible(true);
+             clickMeThree.setVisible(true);
+             clickMeFour.setVisible(true);
+             clickMeFive.setVisible(true);
+             clickMeSix.setVisible(true);
+             clickMeSeven.setVisible(true);  
 
-	          }
-	        };
-	        thread.start();        
-	      }
-	    }
-	  }
+           }
+         };
+         thread.start();        
+       }
+     }
+   }
   
   private class playButtonListener implements ActionListener {
-	    public void actionPerformed(ActionEvent event) {      
-	      
-	      if (event.getSource() == playButton) {         
-	        
-	        lblWelcome.setVisible(true);
-	        playButton.setVisible(false);
-	        helpButton.setVisible(false); 
-	        quitButton.setVisible(false); 
-	        onePlayer.setVisible(true);
-	        twoPlayer.setVisible(true);
-	        goBack.setVisible(true);        
-	      }
-	    }
-	  }
+     public void actionPerformed(ActionEvent event) {      
+       
+       if (event.getSource() == playButton) {         
+         
+         lblWelcome.setVisible(true);
+         playButton.setVisible(false);
+         helpButton.setVisible(false); 
+         quitButton.setVisible(false); 
+         onePlayer.setVisible(true);
+         twoPlayer.setVisible(true);
+         goBack.setVisible(true);        
+       }
+     }
+   }
   
   
   private class goBackButtonListener implements ActionListener {
@@ -403,29 +403,35 @@ public class connectFourDesign extends JPanel {
   private class helpListener implements ActionListener{
     public void actionPerformed(ActionEvent event) {
       
-      if (event.getSource() == helpButton) {           
-        JOptionPane.showMessageDialog(null, " 1) Choose who plays first.", " Help ", JOptionPane.INFORMATION_MESSAGE);
-
+      if (event.getSource() == helpButton) { 
+        
+        String message = "1) Decide Who Plays first. Players will alternate turns after playing a checker.\n";
+        message += "\n";
+        message += "2) On your turn, drop one of your checkers down ANY of the slots in the top of the grid.\n";
+        message += "\n";
+        message += "3) Play alternated until one player gets FOUR checkers of his or her colour in a row. The four in a row can be horizontal, vertical or diagonal.";
+        JOptionPane.showMessageDialog(null, message, " Help ", JOptionPane.INFORMATION_MESSAGE);      
+        
       }
     }
   } 
   
   private class clikMeOneButtonListener implements ActionListener{
-	    public void actionPerformed(ActionEvent event) {
-	        
-	        if (event.getSource() == clickMeOne || event.getSource() == clickMeTwo) { 
-	        	
-	        	slots[0][0].setBackground(Color.red);	  
-	        	slots[0][1].setBackground(Color.red);
-	        	slots[0][2].setBackground(Color.red);
-	        	slots[0][3].setBackground(Color.red);
-	        	
-	        	slots[1][0].setBackground(Color.yellow);	  
-	        	slots[1][1].setBackground(Color.yellow);
-	        	slots[1][2].setBackground(Color.yellow);	        	
-	        	
-	        	JOptionPane.showMessageDialog(null, " Player One Won!", " Results ", JOptionPane.INFORMATION_MESSAGE);
-	        }
-	    }
+     public void actionPerformed(ActionEvent event) {
+         
+         if (event.getSource() == clickMeOne || event.getSource() == clickMeTwo) { 
+          
+          slots[0][0].setBackground(Color.red);   
+          slots[0][1].setBackground(Color.red);
+          slots[0][2].setBackground(Color.red);
+          slots[0][3].setBackground(Color.red);
+          
+          slots[1][0].setBackground(Color.yellow);   
+          slots[1][1].setBackground(Color.yellow);
+          slots[1][2].setBackground(Color.yellow);          
+          
+          JOptionPane.showMessageDialog(null, " Player One Won!", " Results ", JOptionPane.INFORMATION_MESSAGE);
+         }
+     }
   }
 }
