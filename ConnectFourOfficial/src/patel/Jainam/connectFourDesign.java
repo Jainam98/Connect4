@@ -608,7 +608,7 @@ public class connectFourDesign extends JPanel {
         }
       }
       
-      // Diagonal 
+      // Diagonal Checking  
       // Left To Right 
       for (int i = 5; i > 2; i-- ) {
         for(int j = 0; j < 4; j++) {        
