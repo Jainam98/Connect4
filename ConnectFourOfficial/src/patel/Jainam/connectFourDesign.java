@@ -316,11 +316,9 @@ public class connectFourDesign extends JPanel {
             twoPlayer.setText("1");  
             try {
               Thread.sleep(1000);                        
-            }catch (Exception e) {          	
-
+            }catch (Exception e) {
             }
-            
-            
+                        
             setLayout(new GridLayout(xsize, ysize));
             slots = new JButton[xsize - 1][ysize];
             
@@ -347,8 +345,7 @@ public class connectFourDesign extends JPanel {
             onePlayer.setVisible(false);
             remove(onePlayer);
             twoPlayer.setVisible(false);
-            remove(twoPlayer);
-            
+            remove(twoPlayer);            
             
             clickMeOne.setVisible(true);
             clickMeTwo.setVisible(true);
@@ -543,7 +540,7 @@ public class connectFourDesign extends JPanel {
           } catch (InterruptedException e) {            
             e.printStackTrace();
           }          
-          theButton.doClick(300); // simulate click for 0.5 seconds
+          theButton.doClick(300); // simulate click for 0.3 seconds
         }        
       }
       );
@@ -553,8 +550,7 @@ public class connectFourDesign extends JPanel {
       
       boolean result = false;
       
-      // horizontal
-      
+      // horizontal      
       boolean found = false;
       int counter = 0;
       
@@ -612,23 +608,37 @@ public class connectFourDesign extends JPanel {
         }
       }
       
-      // diagonal 
+      // Diagonal 
       // Left To Right 
-      for (int i = 5; i > 1; i-- ) {
+      for (int i = 5; i > 2; i-- ) {
         for(int j = 0; j < 4; j++) {        
           
           if (slots[i][j].getBackground().equals(playerColor) &&
               slots[i-1][j+1].getBackground().equals(playerColor) &&
               slots[i-2][j+2].getBackground().equals(playerColor) &&
               slots[i-3][j+3].getBackground().equals(playerColor)) {
-            String message = playerColor.equals(Color.red) ? " Player One Won" : " Player Two Won";
+            String message = playerColor.equals(Color.red) ? " Player One Won! " : " Player Two Won! ";
             JOptionPane.showMessageDialog(null, message, " Results ", JOptionPane.INFORMATION_MESSAGE);
-            System.exit(0);
-            
+            System.exit(0);            
           }
         }
-      }           
+      } 
       
+      // Diagonal
+      // Right To Left
+      for (int i = 6; i > 2; i-- ) {
+          for(int j = 6; j > 2; j--) {        
+            
+            if (slots[i][j].getBackground().equals(playerColor) &&
+                slots[i-1][j-1].getBackground().equals(playerColor) &&
+                slots[i-2][j-2].getBackground().equals(playerColor) &&
+                slots[i-3][j-3].getBackground().equals(playerColor)) {
+              String message = playerColor.equals(Color.red) ? " Player One Won! " : " Player Two Won! ";
+              JOptionPane.showMessageDialog(null, message, " Results ", JOptionPane.INFORMATION_MESSAGE);
+              System.exit(0);              
+            }
+          }
+        }       
       return result;
     }
   }
