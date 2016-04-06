@@ -8,7 +8,7 @@ public class driver {
 		   
     JFrame frame = new JFrame(" Connect Four ");
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    frame.getContentPane().add(new connectFourDesign());  
+    frame.getContentPane().add(new connectFourPanel());  
 	frame.pack();
     frame.setResizable(false);
     frame.setVisible(true);   
