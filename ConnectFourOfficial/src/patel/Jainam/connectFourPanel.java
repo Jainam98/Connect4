@@ -106,7 +106,7 @@ public class connectFourPanel extends JPanel {
     goBack.addActionListener(new goBackButtonListener());
     
     clickMeOne = new JButton (" 1 ");
-    clickMeOne.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+    clickMeOne.setFont(new Font("Times New Roman", Font.ITALIC, 50));
     clickMeOne.setBackground(Color.gray);
     clickMeOne.setForeground(Color.CYAN);
     clickMeOne.setName("clickMeOne");
@@ -115,7 +115,7 @@ public class connectFourPanel extends JPanel {
     clickMeOne.addActionListener(new clikMeButtonListener());
     
     clickMeTwo = new JButton (" 2 ");
-    clickMeTwo.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+    clickMeTwo.setFont(new Font("Times New Roman", Font.ITALIC, 50));
     clickMeTwo.setBackground(Color.gray);
     clickMeTwo.setForeground(Color.CYAN);
     clickMeTwo.setName("clickMeTwo");
@@ -124,7 +124,7 @@ public class connectFourPanel extends JPanel {
     clickMeTwo.addActionListener(new clikMeButtonListener());
     
     clickMeThree = new JButton (" 3 ");
-    clickMeThree.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+    clickMeThree.setFont(new Font("Times New Roman", Font.ITALIC, 50));
     clickMeThree.setBackground(Color.gray);
     clickMeThree.setForeground(Color.CYAN);
     clickMeThree.setName("clickMeThree");
@@ -133,7 +133,7 @@ public class connectFourPanel extends JPanel {
     clickMeThree.addActionListener(new clikMeButtonListener());
     
     clickMeFour = new JButton (" 4 ");
-    clickMeFour.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+    clickMeFour.setFont(new Font("Times New Roman", Font.ITALIC, 50));
     clickMeFour.setBackground(Color.gray);
     clickMeFour.setForeground(Color.CYAN);
     clickMeFour.setName("clickMeFour");
@@ -142,7 +142,7 @@ public class connectFourPanel extends JPanel {
     clickMeFour.addActionListener(new clikMeButtonListener());
     
     clickMeFive = new JButton (" 5 ");
-    clickMeFive.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+    clickMeFive.setFont(new Font("Times New Roman", Font.ITALIC, 50));
     clickMeFive.setBackground(Color.gray);
     clickMeFive.setForeground(Color.CYAN);
     clickMeFive.setName("clickMeFive");
@@ -151,7 +151,7 @@ public class connectFourPanel extends JPanel {
     clickMeFive.addActionListener(new clikMeButtonListener());
     
     clickMeSix = new JButton (" 6 ");
-    clickMeSix.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+    clickMeSix.setFont(new Font("Times New Roman", Font.ITALIC, 50));
     clickMeSix.setBackground(Color.gray);
     clickMeSix.setForeground(Color.CYAN);
     clickMeSix.setName("clickMeSix");
@@ -160,7 +160,7 @@ public class connectFourPanel extends JPanel {
     clickMeSix.addActionListener(new clikMeButtonListener());
     
     clickMeSeven = new JButton (" 7 ");
-    clickMeSeven.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+    clickMeSeven.setFont(new Font("Times New Roman", Font.ITALIC, 50));
     clickMeSeven.setBackground(Color.gray);
     clickMeSeven.setForeground(Color.CYAN);
     clickMeSeven.setName("clickMeSeven");
