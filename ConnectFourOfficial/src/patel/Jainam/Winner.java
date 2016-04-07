@@ -25,6 +25,10 @@ public class Winner {
                 result = true;
                 break;
               }
+            } if (counter == 49){
+            	result = true;
+            	System.out.println(" Draw Game");
+            	break;
             }
             else {            
               found = true;
@@ -52,7 +56,11 @@ public class Winner {
                 result = true;
                 break;
               }
-            }
+            } if (counter == 49){
+            	result = true;
+            	System.out.println(" Draw Game");
+            	break;
+            }            
             else {            
               found = true;
             }
