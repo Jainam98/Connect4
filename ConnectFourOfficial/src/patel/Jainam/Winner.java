@@ -4,19 +4,32 @@ import java.awt.Color;
 
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-
+/**
+ * IsWin class controls all the winning part in two players game mode 
+ * It also check every area such as vertically, Horizontally and Diagonally 
+ */
 public class Winner {
-    public static boolean IsWin(JButton[][] slots, Color playerColor, int column, int row) {   
+  
+ /**
+  * Declares Winner when found in two players mode  in three aspects vertically,horizontally, and diagonally 
+  * @param column
+  *              Column checks the winner vertically 
+  * @param row
+  *     Row checks the winner Horizontally 
+  * @return
+  *     Returns false if no winner is found 
+  */
+ 
+     public boolean IsWin(JButton[][] slots, Color playerColor, int column, int row) {    
         
         boolean result = false;
         
         // horizontal      
         boolean found = false;
         int counter = 0;
-        
+           
         for ( int i = 0; i < slots.length; i++ ) {        
-          if ( slots[i][row].getBackground().equals(playerColor)) { 
-            
+          if ( slots[i][row].getBackground().equals(playerColor)) {             
             counter++;
             
             // win 
@@ -25,10 +38,6 @@ public class Winner {
                 result = true;
                 break;
               }
-            } if (counter == 49){
-            	result = true;
-            	System.out.println(" Draw Game");
-            	break;
             }
             else {            
               found = true;
@@ -41,13 +50,13 @@ public class Winner {
               counter = 0;
             }          
             found = false;
+          }          
           }
-        }
+        
         
         // vertical 
         for ( int i = 0; i < slots.length; i++ ) {        
-          if ( slots[column][i].getBackground().equals(playerColor)) { 
-            
+          if (slots[column][i].getBackground().equals(playerColor)) {             
             counter++;
             
             // win           
@@ -56,11 +65,7 @@ public class Winner {
                 result = true;
                 break;
               }
-            } if (counter == 49){
-            	result = true;
-            	System.out.println(" Draw Game");
-            	break;
-            }            
+            }
             else {            
               found = true;
             }
@@ -79,7 +84,8 @@ public class Winner {
         // Diagonal Checking  
         //Winning diagonally towards right
         for (int i = 5; i > 2; i-- ) {
-          for(int j = 0; j < 4; j++) {        
+          for(int j = 0; j < 4; j++) {   
+        	  
             
             if (slots[i][j].getBackground().equals(playerColor) &&
                 slots[i-1][j+1].getBackground().equals(playerColor) &&
@@ -108,5 +114,6 @@ public class Winner {
             }
           }       
         return result;
-      } 
-}
+      }
+     
+    }
